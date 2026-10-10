@@ -24,8 +24,8 @@ podman build --tag python-3.14-image ./srv/python
 podman run -itd --detach \
   --pod podman-python-pod \
   --name python-3.14-container \
-  --volume ./srv/python/work:/work  \
-  --workdir /work \
+  --volume ./srv/python/work:/python_unittest  \
+  --workdir /python_unittest \
   --replace \
   python-3.14-image
 podman pod ps --ctr-status --ctr-names
